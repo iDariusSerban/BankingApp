@@ -17,6 +17,8 @@ public class BankingApp {
         client1.listAccounts();
         client1.withdraw(600,bankAccount1);
         client1.listAccounts();
+        System.out.println(client1.checkAccountDetails("Ro002"));
+
     }
 
 }

@@ -43,7 +43,7 @@ public class Client {
     public void listAccounts() {
         for (int i = 0; i < accountList.length; i++) {
             if (accountList[i] != null) {
-                System.out.println("In contul " + accountList[i].getAccountNumber() + " este suma: " +  accountList[i].getBalance());
+                System.out.println("In contul " + accountList[i].getAccountNumber() + " este suma: " + accountList[i].getBalance());
 
             }
         }
@@ -57,10 +57,10 @@ public class Client {
         bankAccount.withdraw(sum);
     }
 
-    public BankAccount checkAccountDetails(String accountNumber) {
+    public String checkAccountDetails(String accountNumber) {
         for (int i = 0; i < accountList.length; i++) {
             if (accountNumber.equals(accountList[i].getAccountNumber())) {
-                return accountList[i];
+                return accountList[i].getAccountNumber() + " " + accountList[i].getBalance();
             }
         }
         return null;
