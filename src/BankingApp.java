@@ -12,12 +12,11 @@ public class BankingApp {
         client1.addAccount(bankAccount2);
         client1.listAccounts();
 
-        client1.deposit(800, bankAccount1);
-        client1.deposit(500, bankAccount2);
+        client1.deposit(800, "Ro001");
+
+
         client1.listAccounts();
-        client1.withdraw(600,bankAccount1);
-        client1.listAccounts();
-        System.out.println(client1.checkAccountDetails("Ro002"));
+
 
     }
 

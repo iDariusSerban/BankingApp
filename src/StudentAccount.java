@@ -25,10 +25,17 @@ public class StudentAccount extends BankAccount {
 
     @Override
     public boolean deposit(int sum) {
-        if (sum < maxDepositAmount) {
+        if (sum <= maxDepositAmount) {
             setBalance(getBalance() + sum);
             return true;
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentAccount{" +
+                "maxDepositAmount=" + maxDepositAmount +
+                '}';
     }
 }

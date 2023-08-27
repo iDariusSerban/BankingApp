@@ -49,20 +49,31 @@ public class Client {
         }
     }
 
-    public void deposit(int sum, BankAccount bankAccount) {
-        bankAccount.deposit(sum);
+    public int deposit(int sum, String accountNumber) {
+        BankAccount account = findAccount(accountNumber);
+        account.deposit(sum);
+        return account.getBalance();
     }
 
-    public void withdraw(int sum, BankAccount bankAccount) {
-        bankAccount.withdraw(sum);
+    public int withdraw(int sum, String accountNumber) {
+        BankAccount account = findAccount(accountNumber);
+        account.deposit(sum);
+        return account.getBalance();
     }
 
-    public String checkAccountDetails(String accountNumber) {
+    public BankAccount findAccount (String accountNumber){
         for (int i = 0; i < accountList.length; i++) {
             if (accountNumber.equals(accountList[i].getAccountNumber())) {
-                return accountList[i].getAccountNumber() + " " + accountList[i].getBalance();
+                return accountList[i];
             }
         }
         return null;
+    }
+
+    public void checkAccountDetails(String accountNumber) {
+        BankAccount account = findAccount(accountNumber);
+        System.out.println(account.toString());
+        System.out.println(fisrtName + " " + lastName);
+
     }
 }
